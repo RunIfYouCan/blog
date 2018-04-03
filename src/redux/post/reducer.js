@@ -1,6 +1,6 @@
-const initialState = {}
+const initialState = {};
 
-export default function reducer(state=initialState, action) {
+export default function reducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     default:

@@ -5,47 +5,60 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: path.resolve(__dirname, "src/index.js"),
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
-    path: __dirname + '/dist',
-    filename: "bundle.js",
-    publicPath: '/'
+    path: path.join(__dirname, '/dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              eslintPath: require.resolve('eslint'),
+            },
+            loader: require.resolve('eslint-loader'),
+          },
+        ],
+      },
+      {
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [{
-          loader: require.resolve("babel-loader"),
+          loader: require.resolve('babel-loader'),
           options: {
-            plugins: ['react-hot-loader/babel'  ]
-          }
-        }]
+            plugins: ['react-hot-loader/babel'],
+          },
+        }],
       },
       {
         test: /\.(scss|sass)$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      }
-    ]
+          use: ['css-loader', 'sass-loader'],
+        }),
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: "public/index.html",
+      template: 'public/index.html',
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify("development")
+      'process.env.NODE_ENV': JSON.stringify('development'),
     }),
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
   ],
   devServer: {
     contentBase: './public',
     publicPath: '/',
-    watchContentBase: true
-  }
-}
+    watchContentBase: true,
+    open: true,
+  },
+};
