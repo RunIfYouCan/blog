@@ -14,13 +14,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: 10000,
+          name: 'static/media/[name].[hash].[ext]',
+        },
+      },
+      {
         test: /\.(js|jsx)$/,
         enforce: 'pre',
         use: [
           {
             options: {
               eslintPath: require.resolve('eslint'),
-              fix: true,
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -48,12 +55,16 @@ module.exports = {
             {
               loader: 'sass-loader',
               options: {
-                data: '@import "styles/variables";',
+                data: '@import "variables";',
                 includePaths: [path.join(__dirname, 'src/styles')],
               },
             },
           ],
         }),
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: ['file-loader'],
       },
     ],
   },

@@ -1,0 +1,136 @@
+
+.Panel {
+	background: $gray;
+	height: 107px;
+	display: flex;
+	align-items: flex-end;
+	font-size: 35px;
+	padding-bottom: 21px;
+	line-height: 1;
+	text-transform: uppercase;
+	color: $white;
+	font-weight: 800;
+}
+
+.Post {
+	display: flex;
+
+	&__date-container {
+		background: $gray;
+		padding: 7px;
+		position: absolute;
+		color: $white;
+		min-height: 155px;
+	}
+
+	&__date {
+		font-size: 30px;
+		line-height: 1.2;
+		border-bottom: 1px solid #717151;
+		font-weight: 500;
+	}
+
+	&__dates {
+		white-space: nowrap;
+		transform:  translateX(-50%) translateY(-85%) rotate(90deg);
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		font-size: 14px;
+	}
+
+	&__day {
+		font-weight: 500;
+	}
+
+	&__month-year {
+		font-weight: 300;
+	}
+
+	&__img {
+		margin-left: 20px;
+		display: block;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 14px 14px;
+		border-bottom: 1px solid $gray;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 55px;
+	}
+
+	&__text {
+		font-size: 14px;
+		color: $black;
+		font-weight: 500;
+	}
+
+	&__button {
+		align-self: flex-end;
+		margin-top: auto;
+		color: $gray;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+	}
+}
+
+.SidePanel {
+	&__header {
+		font-size: 21px;
+		font-weight: 500;
+		color: #698095;
+		margin-bottom: 30px;
+	}
+
+	&__article {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $gray;
+		margin-bottom: 10px;
+
+		&-title {
+			font-size: 12px;
+			font-weight: 600;
+			padding-bottom: 5px;
+		}
+
+		&-text {
+			font-size: 12px;
+		}
+	}
+
+	&__popular {
+		.SidePanel__title {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		background: #eeeee9;
+		font-size: 13px;
+		border-top: 1px solid $gray;
+		height: 32px;
+		line-height: 32px;
+		padding: 0 10px;
+		display: flex;
+		align-items: center;
+
+		i {
+			display: block;
+			margin-right: 10px;
+			color: $icon-gray;
+		}
+	}
+}
+
+.BlogList {
+	&__content {
+		margin-top: 33px;
+	}
+}
