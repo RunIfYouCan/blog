@@ -20,6 +20,7 @@ module.exports = {
           {
             options: {
               eslintPath: require.resolve('eslint'),
+              fix: true,
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -40,7 +41,18 @@ module.exports = {
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
+          use: [
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "styles/variables";',
+                includePaths: [path.join(__dirname, 'src/styles')],
+              },
+            },
+          ],
         }),
       },
     ],
@@ -54,6 +66,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
     new ExtractTextPlugin('style.css'),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
     contentBase: './public',
