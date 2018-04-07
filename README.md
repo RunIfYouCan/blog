@@ -5,4 +5,7 @@ npm install
 ### Start dev server
 npm start
 ### Bundle app
-npm run bundle
+npm run build
+###zeit
+Doesn't work because api use http instead of https.
+https://blog-trsusmussp.now.sh/posts
