@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import ListPost from './list-post';
+import AddPost from './add-post';
 import { SidePanel, Panel } from '../../components';
 import { getParameterByName } from '../../utils/url';
-import { loadArticles } from '../../redux/articles/actions';
+import { loadArticles, addPost } from '../../redux/articles/actions';
 import './style.scss';
 
 class BlogList extends Component {
@@ -27,6 +28,10 @@ class BlogList extends Component {
     }
   }
 
+  addPost = (post) => {
+    this.props.addPost(post);
+  }
+
   pageChange = ({ selected }) => {
     const { history, match } = this.props;
     history.push(`${match.path}?page=${selected + 1}`);
@@ -45,6 +50,9 @@ class BlogList extends Component {
                 {posts.map(post => <ListPost key={post._id} {...post} />)}
               </div>
               }
+              <div className="BlogList__AddPost">
+                <AddPost onSubmit={this.addPost} />
+              </div>
               <ReactPaginate
                 previousLabel={<i className="fa fa-angle-left" />}
                 nextLabel={<i className="fa fa-angle-right" />}
@@ -77,4 +85,4 @@ const mapStateToProps = ({ articles }) => ({
   meta: articles.meta,
 });
 
-export default connect(mapStateToProps, { loadArticles })(BlogList);
+export default connect(mapStateToProps, { loadArticles, addPost })(BlogList);

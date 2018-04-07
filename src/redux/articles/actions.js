@@ -28,9 +28,30 @@ export const loadArticle = id => dispatch =>
 
 export const postComment = comment => dispatch =>
   api
-    .post('/comment', { ...comment })
+    .post('/comment', comment)
     .then(({ data }) =>
       dispatch({
         type: actionTypes.COMMENT_POSTED,
         payload: normalize(data, commentSchema),
       }));
+
+export const editPost = ({ post, id }) => dispatch =>
+  api
+    .put(id, post)
+    .then(({ data }) => {
+      const { entities, result } = normalize(data, articleSchema);
+      dispatch({
+        type: actionTypes.POST_EDITED,
+        payload: entities.articles[result],
+      });
+    });
+
+export const addPost = post => dispatch =>
+  api
+    .post('', post)
+    .then(({ data }) => {
+      dispatch({
+        type: actionTypes.POST_ADDED,
+        payload: data,
+      });
+    });

@@ -49,4 +49,16 @@
 	&__form {
 		margin-top: 50px;
 	}
+
+	&__button {
+		cursor: pointer;
+		font-size: 18px;
+		min-width: 30px;
+		margin: 10px;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+	}
 }

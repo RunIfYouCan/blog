@@ -3,11 +3,12 @@
   "extends": ["airbnb"],
   "rules": {
     "react/jsx-filename-extension": [0],
-    "react/prop-types": false,
+    "react/prop-types": [0],
     "no-case-declarations": [0],
     "no-underscore-dangle": [0],
-    "import/prefer-default-export": false,
-    "react/no-danger": false,
+    "import/prefer-default-export": [0],
+    "react/no-danger": [0],
+    "no-return-assign": [0],
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
       "specialLink": [ "to" ],

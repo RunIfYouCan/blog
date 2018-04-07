@@ -1,0 +1,17 @@
+.AddPost {
+	padding: 20px 0;
+	display: flex;
+	justify-content: center;
+
+	&__title {
+		margin-bottom: 15px;
+	}
+
+	&__buttons {
+		margin: 10px;
+
+		button {
+			margin: 0 10px;
+		}
+	}
+}

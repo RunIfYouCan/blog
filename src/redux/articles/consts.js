@@ -1,3 +1,5 @@
 export const ARTICLES_LOADED = 'ARTICLES_LOADED';
 export const ARTICLE_LOADED = 'ARTICLE_LOADED';
 export const COMMENT_POSTED = 'COMMENT_POSTED';
+export const POST_EDITED = 'POST_EDITED';
+export const POST_ADDED = 'POST_ADDED';

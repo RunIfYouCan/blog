@@ -8,7 +8,7 @@ export default ({
   created,
   _id,
   body,
-  label,
+  title,
 }) => (
   <div key={_id} className="ListPost">
     <div className="ListPost__thumb">
@@ -18,9 +18,7 @@ export default ({
       <img className="ListPost__img" src={img} alt="Mountains and air balloons" />
     </div>
     <div className="ListPost__content">
-      <div className="ListPost__title">
-        {label}
-      </div>
+      <div className="ListPost__title" dangerouslySetInnerHTML={{ __html: title }} />
       <div className="ListPost__text" dangerouslySetInnerHTML={{ __html: body }} />
       <Link to={`/posts/${_id}`} className="ListPost__button">
         continue reading

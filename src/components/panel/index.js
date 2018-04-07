@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 export default () => (
   <div className="Panel">
     <div className="container">
-      Blog
+      <Link to="/posts">
+        Blog
+      </Link>
     </div>
   </div>
 );

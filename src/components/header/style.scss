@@ -1,0 +1,24 @@
+.Header {
+	min-height: 115px;
+	padding-top: 20px;
+
+	&__nav {
+		display: flex;
+		text-transform: uppercase;
+		font-size: 18px;
+
+		&-item {
+			padding: 5px 15px;
+		}
+
+		&-container {
+			display: flex;
+			align-items: center;
+			padding: 0 20px;
+		}
+	}
+
+	&__logo {
+		margin-right: 100px;
+	}
+}

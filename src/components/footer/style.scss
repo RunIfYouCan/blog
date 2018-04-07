@@ -1,0 +1,14 @@
+.Footer {
+	margin-top: 50px;
+	background: $black;
+	color: $white;
+	min-height: 35px;
+	display: flex;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+		align-items: center;
+	}
+}
