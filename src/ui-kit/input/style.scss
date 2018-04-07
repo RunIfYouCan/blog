@@ -1,0 +1,12 @@
+.Input {
+	border: 1px solid $light-gray3;
+	min-height: 40px;
+	line-height: 40px;
+	padding: 0 11px;
+	width: 100%;
+
+	&::placeholder {
+		color: $text-gray;
+		font-weight: 500;
+	}
+}

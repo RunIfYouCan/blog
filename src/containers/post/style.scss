@@ -1,0 +1,52 @@
+.Post {
+	img {
+		width: 100%;
+	}
+
+	&__img-footer {
+		background: $light-gray;
+		height: 26px;
+		display: flex;
+		align-items: center;
+		color: $light-gray2;
+		padding: 0 10px;
+		font-size: 14px;
+
+		i {
+			margin-right: 5px;
+		}
+	}
+
+	&__tags {
+		display: flex;
+		align-items: center;
+
+		ul {
+			display: flex;
+		}
+
+		li {
+			margin-right: 10px;
+		}
+	}
+
+	&__comments-count {
+		margin-left: auto;
+		margin-right: 30px;
+	}
+
+	&__submit {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__title {
+		font-size: 36px;
+		padding: 45px 0;
+		font-weight: 600;
+	}
+
+	&__form {
+		margin-top: 50px;
+	}
+}

@@ -1,0 +1,75 @@
+.SidePanel {
+	&__header {
+		font-size: 21px;
+		font-weight: 500;
+		color: $blue;
+		margin-bottom: 30px;
+	}
+
+	&__article {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $gray;
+		margin-bottom: 10px;
+
+		&-title {
+			font-size: 12px;
+			font-weight: 600;
+			padding-bottom: 5px;
+		}
+
+		&-text {
+			font-size: 12px;
+		}
+	}
+
+	&__popular {
+		.SidePanel__title {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__archive {
+		margin-top: 30px;
+	}
+
+	&__title {
+		background: $light-gray;
+		font-size: 13px;
+		border-top: 1px solid $gray;
+		height: 32px;
+		line-height: 32px;
+		padding: 0 10px;
+		display: flex;
+		align-items: center;
+		color: $light-gray2;
+
+		&-icon {
+			display: block;
+			margin-right: 10px;
+			color: $light-gray2;
+
+			&--angle {
+				margin-right: 0;
+				font-size: 16px;
+			}
+		}
+
+		&-text {
+			display: flex;
+			align-items: center;
+		}
+
+		&--toggler {
+			justify-content: space-between;
+			border-top-color: $white;
+		}
+	}
+
+	&__years-item {
+		display: flex;
+		justify-content: space-between;
+		font-size: 13px;
+		padding: 8px 9px;
+		border-bottom: 1px solid $light-gray;
+	}
+}

@@ -1,0 +1,25 @@
+body {
+	font-family: $main-font;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: $black;
+	outline: none;
+
+	&:hover {
+		text-decoration: none;
+		color: initial;
+	}
+}
+
+input,
+button {
+	border: 0;
+	outline: none;
+}

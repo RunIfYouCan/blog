@@ -1,0 +1,37 @@
+.ListPost {
+	display: flex;
+	margin-bottom: 60px;
+	&__img {
+		margin-left: 20px;
+		display: block;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding: 0 0 14px 14px;
+		border-bottom: 1px solid $gray;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		margin-bottom: 55px;
+	}
+
+	&__text {
+		font-size: 14px;
+		color: $black;
+		font-weight: 500;
+	}
+
+	&__button {
+		align-self: flex-end;
+		margin-top: auto;
+		color: $gray;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,30 @@
+.Comment {
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__author {
+		font-weight: 500;
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		padding-left: 10px;
+	}
+
+	&__date {
+		align-self: flex-end;
+		font-size: 12px;
+		color: $gray;
+	}
+
+	&__replies {
+		margin-left: 20px;
+	}
+}
