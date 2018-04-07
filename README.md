@@ -6,6 +6,6 @@ npm install
 npm start
 ### Bundle app
 npm run build
-###zeit
+### zeit
 Doesn't work because api use http instead of https.
 https://blog-trsusmussp.now.sh/posts
